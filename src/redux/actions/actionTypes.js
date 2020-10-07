@@ -1,8 +1,8 @@
-export const CREATE_RECIPE = "CREATE_RECIPE";
-export const LOAD_RECIPES_SUCCESS = "LOAD_RECIPES_SUCCESS";
-export const LOAD_CATEGORIES_SUCCESS = "LOAD_CATEGORIES_SUCCESS";
-export const CREATE_RECIPE_SUCCESS = "CREATE_RECIPE_SUCCESS";
-export const UPDATE_RECIPE_SUCCESS = "UPDATE_RECIPE_SUCCESS";
+export const CREATE_COURSE = "CREATE_COURSE";
+export const LOAD_COURSES_SUCCESS = "LOAD_COURSES_SUCCESS";
+export const LOAD_AUTHORS_SUCCESS = "LOAD_AUTHORS_SUCCESS";
+export const CREATE_COURSE_SUCCESS = "CREATE_COURSE_SUCCESS";
+export const UPDATE_COURSE_SUCCESS = "UPDATE_COURSE_SUCCESS";
 export const BEGIN_API_CALL = "BEGIN_API_CALL";
 export const API_CALL_ERROR = "API_CALL_ERROR";
 
@@ -11,4 +11,4 @@ export const API_CALL_ERROR = "API_CALL_ERROR";
 // So this action name deliberately omits the "_SUCCESS" suffix.
 // If it had one, our apiCallsInProgress counter would be decremented below zero
 // because we're not incrementing the number of apiCallInProgress when the delete request begins.
-export const DELETE_RECIPE_OPTIMISTIC = "DELETE_RECIPE_OPTIMISTIC";
+export const DELETE_COURSE_OPTIMISTIC = "DELETE_COURSE_OPTIMISTIC";

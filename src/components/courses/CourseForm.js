@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 import TextInput from "../common/TextInput";
 import SelectInput from "../common/SelectInput";
 
-const RecipeForm = ({
-  recipe,
-  categories,
+const CourseForm = ({
+  course,
+  authors,
   onSave,
   onChange,
   saving = false,
-  errors = {},
+  errors = {}
 }) => {
   return (
     <form onSubmit={onSave}>
-      <h2>{recipe.id ? "Edit" : "Add"}Receta</h2>
+      <h2>{course.id ? "Edit" : "Add"} Course</h2>
       {errors.onSave && (
         <div className="alert alert-danger" role="alert">
           {errors.onSave}
@@ -21,47 +21,47 @@ const RecipeForm = ({
       )}
       <TextInput
         name="title"
-        label="Título"
-        value={recipe.title}
+        label="Title"
+        value={course.title}
         onChange={onChange}
         error={errors.title}
       />
 
       <SelectInput
-        name="categoryId"
-        label="Categoría"
-        value={recipe.categoryId || ""}
-        defaultOption="Seleccionar Categoría"
-        options={categories.map((category) => ({
-          value: category.id,
-          text: category.name,
+        name="authorId"
+        label="Author"
+        value={course.authorId || ""}
+        defaultOption="Select Author"
+        options={authors.map(author => ({
+          value: author.id,
+          text: author.name
         }))}
         onChange={onChange}
         error={errors.author}
       />
 
       <TextInput
-        name="description"
-        label="Descripción"
-        value={recipe.description}
+        name="category"
+        label="Category"
+        value={course.category}
         onChange={onChange}
-        error={errors.description}
+        error={errors.category}
       />
 
       <button type="submit" disabled={saving} className="btn btn-primary">
-        {saving ? "Guardando..." : "Guardar"}
+        {saving ? "Saving..." : "Save"}
       </button>
     </form>
   );
 };
 
-RecipeForm.propTypes = {
-  categories: PropTypes.array.isRequired,
-  recipe: PropTypes.object.isRequired,
+CourseForm.propTypes = {
+  authors: PropTypes.array.isRequired,
+  course: PropTypes.object.isRequired,
   errors: PropTypes.object,
   onSave: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  saving: PropTypes.bool,
+  saving: PropTypes.bool
 };
 
-export default RecipeForm;
+export default CourseForm;

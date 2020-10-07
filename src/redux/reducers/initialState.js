@@ -1,5 +1,5 @@
 export default {
-  recipes: [],
-  categories: [],
-  apiCallsInProgress: 0,
+  courses: [],
+  authors: [],
+  apiCallsInProgress: 0
 };
